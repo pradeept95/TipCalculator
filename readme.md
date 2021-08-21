@@ -22,7 +22,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Setting page is on different tab, tab view added (Note : setting page is non-functional. Need to implement)
+- [x] Custom tip percentage is allowed to the user. User can enter whatever tip percentage they want (it should be in between 0 and 100)
 
 ## Video Walkthrough
 
