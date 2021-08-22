@@ -35,10 +35,12 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         billAmountTextField.becomeFirstResponder()
         setSettingValue()
+        setRememberedAmount()
     }
     
     
     @IBAction func amountChanged(_ sender: Any) {
+        rememberAmount()
         calculateTipAmount()
     }
     
@@ -186,6 +188,43 @@ class ViewController: UIViewController {
         tipControl?.setTitle(String(format: "%3.0f%%",tipPercentage[1]*100), forSegmentAt: 1)
         tipControl?.setTitle(String(format: "%3.0f%%",tipPercentage[2]*100), forSegmentAt: 2)
         
+    }
+    
+    func rememberAmount(){
+        let defaults = UserDefaults.standard
+        defaults.set(billAmountTextField.text, forKey: amountMemory.amount)
+        defaults.set(Date(), forKey: amountMemory.timestamp)
+    }
+    
+    func setRememberedAmount(){
+        let defaults = UserDefaults.standard
+        
+        //set amount
+        if let lastTimestamp = defaults.string(forKey: amountMemory.timestamp) {
+             
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let lastdate = dateFormatter.date(from:lastTimestamp)!
+             
+            //if the last updated amount is less than 10 min
+            if minutesBetweenDates(lastdate, Date()) <= 10 {
+                
+                if let amount = defaults.string(forKey: amountMemory.amount) {
+                    billAmountTextField.text = amount
+                }
+            }
+        }
+    }
+    
+    func minutesBetweenDates(_ oldDate: Date, _ newDate: Date) -> CGFloat {
+
+        //get both times sinces refrenced date and divide by 60 to get minutes
+        let newDateMinutes = newDate.timeIntervalSinceReferenceDate/60
+        let oldDateMinutes = oldDate.timeIntervalSinceReferenceDate/60
+
+        //then return the difference
+        return CGFloat(newDateMinutes - oldDateMinutes)
     }
     
     

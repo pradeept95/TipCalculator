@@ -15,3 +15,8 @@ struct defaultTipPercentage {
 }
 
 
+struct amountMemory {
+    static let amount = "totalAmount"
+    static let timestamp = "lastTimestamp"
+}
+
