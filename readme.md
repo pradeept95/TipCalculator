@@ -4,7 +4,7 @@ CALC TIPS is a tip calculator application for iOS.
 
 Submitted by: Pradeep Raj Thapaliya
 
-Time spent: 16 hours spent in total (Study and Development)
+Time spent: 21 hours spent in total (Study and Development)
 
 ## User Stories
 
