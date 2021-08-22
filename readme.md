@@ -1,28 +1,29 @@
-# Pre-work - *Name of App Here*
+# Pre-work - CALC TIPS
 
-**Name of your app** is a tip calculator application for iOS.
+CALC TIPS is a tip calculator application for iOS.
 
-Submitted by: **Your Name Here**
+Submitted by: Pradeep Raj Thapaliya
 
-Time spent: **X** hours spent in total
+Time spent: 16 hours spent in total (Study and Development)
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ] User can select between tip percentages by tapping different values on the segmented control and the tip value is updated accordingly
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] User can select between tip percentages by tapping different values on the segmented control and the tip value is updated accordingly
 
 The following **optional** features are implemented:
 
 * [ ] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Using locale-specific currency and currency thousands separators.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Setting page is on different tab, tab view added (Note : setting page is non-functional. Need to implement)
+- [x] Custom tip percentage is allowed to the user. User can enter whatever tip percentage they want (it should be in between 0 and 100)
 
 ## Video Walkthrough
 
